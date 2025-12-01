@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Paisajismo — Gofer Servicios SpA</title>
+  <title>Andamios — Gofer Servicios SpA</title>
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -20,8 +20,8 @@
   <!-- Navegación coherente -->
   <nav id="navbar" class="fixed w-full z-40 bg-transparent py-4 transition-all">
     <div class="container mx-auto px-4 md:px-6 flex items-center justify-between">
-      <a href="index" class="flex items-center gap-3">
-        <img src="assets/img/logoGofer1.png" alt="Gofer Servicios SpA" class="w-10 h-10 object-contain rounded-md">
+      <a href="../" class="flex items-center gap-3">
+        <img src="../assets/img/logoGofer1.png" alt="Gofer Servicios SpA" class="w-10 h-10 object-contain rounded-md">
         <div class="leading-tight">
           <div class="font-bold text-gray-900">Gofer<span class="text-xs">SpA</span></div>
           <div class="text-xs text-gray-500 tracking-wide">Servicios Integrales</div>
@@ -29,8 +29,8 @@
       </a>
 
       <div class="hidden md:flex items-center gap-8">
-        <a href="index" class="text-gray-700 hover:text-red-600">Inicio</a>
-        <a href="index#nosotros" class="text-gray-700 hover:text-red-600">Nosotros</a>
+        <a href="../" class="text-gray-700 hover:text-red-600">Inicio</a>
+        <a href="../#nosotros" class="text-gray-700 hover:text-red-600">Nosotros</a>
       </div>
 
       <div class="md:hidden">
@@ -39,8 +39,8 @@
     </div>
     <div id="mobile-menu" class="hidden md:hidden bg-white w-full absolute top-full left-0 shadow-lg z-50">
       <div class="px-4 py-4 flex flex-col">
-        <a href="index" class="py-2">Inicio</a>
-        <a href="index#nosotros" class="py-2">Nosotros</a>
+        <a href="../" class="py-2">Inicio</a>
+        <a href="../#nosotros" class="py-2">Nosotros</a>
       </div>
     </div>
   </nav>
@@ -50,21 +50,21 @@
   <!-- Hero -->
   <header class="pt-8 pb-8 bg-white">
     <div class="container mx-auto px-4 md:px-6 text-center">
-      <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Servicios de Paisajismo</h1>
-      <p class="text-lg italic text-green-700 font-medium mb-4">Donde la creatividad florece.</p>
-      <p class="max-w-3xl mx-auto text-gray-600">Nuestros expertos transformarán tu espacio exterior en un hermoso jardín o paisaje que cumple con los más altos estándares estéticos y funcionales. Adaptamos nuestros diseños a tus necesidades específicas y aseguramos un acabado impecable.</p>
-      <p class="mt-4 text-sm text-gray-500"><strong>Precio:</strong> Depende del montaje.</p>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Servicio de Andamios</h1>
+      <p class="text-lg italic text-red-600 font-medium mb-4">Eleva tu proyecto con seguridad y confianza.</p>
+      <p class="max-w-3xl mx-auto text-gray-600">Ofrecemos un completo servicio de arriendo de andamios de alta calidad, ideales para trabajos de construcción, mantenimiento y proyectos en altura. Nuestros andamios están diseñados para brindar estabilidad, seguridad y óptimo rendimiento, cumpliendo con estrictos estándares técnicos y normativos. Además, contamos con un equipo especializado en el armado y desarmado de andamios, garantizando una instalación segura, eficiente y acorde a las necesidades de cada obra.</p>
+      <p class="mt-4 text-sm text-gray-500"><strong>Precio:</strong> Precio por cuerpo.</p>
     </div>
   </header>
 
   <main class="container mx-auto px-4 md:px-6 pb-16">
     <section class="grid md:grid-cols-2 gap-6 my-8">
-      <img src="assets/img/paisajismo1.jpg" alt="Trabajo 1" class="w-full h-64 object-cover rounded-2xl shadow-md">
-      <img src="assets/img/paisajismo2.jpg" alt="Trabajo 2" class="w-full h-64 object-cover rounded-2xl shadow-md">
+      <img src="../assets/img/andamio.jpg" alt="Trabajo 1" class="w-full h-64 object-cover rounded-2xl shadow-md">
+      <img src="../assets/img/andamio2.jpg" alt="Trabajo 2" class="w-full h-64 object-cover rounded-2xl shadow-md">
     </section>
 
     <section class="bg-white rounded-2xl p-8 shadow-sm">
-      <h2 class="text-2xl font-bold mb-4">Reservar servicio de Paisajismo</h2>
+      <h2 class="text-2xl font-bold mb-4">Reservar servicio de Andamios</h2>
       <form class="grid gap-4">
         <div class="grid md:grid-cols-2 gap-4">
           <input name="nombre" required placeholder="Nombre" class="px-4 py-2 border rounded-lg" />
@@ -75,43 +75,27 @@
           <input name="telefono" required placeholder="Teléfono" class="px-4 py-2 border rounded-lg" />
           <input name="email" required type="email" placeholder="Email" class="px-4 py-2 border rounded-lg" />
         </div>
-        <input type="hidden" name="service" value="Proyecto de Paisajismo">
+        <input type="hidden" name="service" value="Arriendo de Andamios">
         <textarea name="mensaje" rows="4" placeholder="Mensaje / detalles" class="px-4 py-2 border rounded-lg"></textarea>
-        <div class="pt-2"><button class="w-full bg-red-600 text-white py-3 rounded-lg font-bold">Reservar</button></div>
+        <div class="pt-2"><button class="w-full bg-red-600 text-white py-3 rounded-lg font-bold" type="submit">Reservar</button></div>
       </form>
     </section>
 
-    <!-- Políticas de Paisajismo -->
-    <section id="politicas-paisajismo" class="mt-8 bg-white rounded-2xl p-8 shadow-sm">
-      <h2 class="text-2xl font-bold mb-4">Políticas de servicios de paisajismo</h2>
+    <!-- Políticas de Andamios -->
+    <section id="politicas-andamios" class="mt-8 bg-white rounded-2xl p-8 shadow-sm">
+      <h2 class="text-2xl font-bold mb-4">Políticas de Reserva, Cancelación y Lista de Espera</h2>
       <ol class="list-decimal ml-6 text-gray-700 space-y-4">
         <li>
-          <strong>Alcance del Servicio</strong><br>
-          Nuestros servicios de paisajismo incluyen diseño, ejecución, mantención y mejoras de áreas verdes, según las necesidades del cliente y las condiciones del espacio.
+          <strong>Reserva de Servicios</strong><br>
+          La reserva se confirma una vez recibido el pago inicial o la orden formal de servicio. Toda reserva está sujeta a disponibilidad del equipo y del personal especializado. El cliente debe proporcionar la información necesaria del proyecto para garantizar una correcta planificación.
         </li>
         <li>
-          <strong>Reservas y Programación</strong><br>
-          La programación del servicio se confirma una vez recibida la solicitud formal y la información necesaria del proyecto. Las fechas están sujetas a disponibilidad.
+          <strong>Cancelación de Servicios</strong><br>
+          Las cancelaciones realizadas con más de 48 horas de anticipación no generan cargos. Las cancelaciones dentro de las 48 horas previas al servicio pueden estar sujetas a un cobro del 50% del valor acordado. La cancelación el mismo día del servicio implica el cobro total del monto reservado.
         </li>
         <li>
-          <strong>Precios y Cotizaciones</strong><br>
-          El valor del servicio depende del tipo de montaje, superficie a intervenir y requerimientos específicos del proyecto. Las cotizaciones tienen validez por un período determinado.
-        </li>
-        <li>
-          <strong>Modificaciones del Servicio</strong><br>
-          Cualquier cambio solicitado después de la planificación inicial podrá afectar los plazos y costos del proyecto.
-        </li>
-        <li>
-          <strong>Cancelaciones</strong><br>
-          Las cancelaciones con 48 horas de anticipación no generan cargos. Cancelaciones posteriores pueden estar sujetas a cobros asociados a la programación y materiales.
-        </li>
-        <li>
-          <strong>Condiciones de Trabajo</strong><br>
-          El cliente debe asegurar el acceso al área de trabajo y garantizar condiciones adecuadas para la ejecución del servicio.
-        </li>
-        <li>
-          <strong>Garantía</strong><br>
-          Los trabajos realizados cuentan con garantía según el tipo de intervención, siempre que se cumplan las recomendaciones de mantención entregadas.
+          <strong>Lista de Espera</strong><br>
+          En caso de no existir disponibilidad inmediata, el cliente puede inscribirse en la lista de espera. La asignación de turnos se realiza por orden de solicitud. El cliente será contactado automáticamente cuando exista disponibilidad y tendrá un plazo determinado para confirmar.
         </li>
       </ol>
     </section>
@@ -122,7 +106,7 @@
     <div class="container mx-auto px-4 md:px-6 grid md:grid-cols-4 gap-8">
       <div>
         <div class="flex items-center gap-3 mb-3">
-          <img src="assets/img/logoGofer1.png" alt="Gofer Servicios SpA" class="w-10 h-10 object-contain rounded-md">
+          <img src="../assets/img/logoGofer1.png" alt="Gofer Servicios SpA" class="w-10 h-10 object-contain rounded-md">
           <div class="font-bold">Gofer<span class="text-xs">SpA</span></div>
         </div>
         <p class="text-gray-400 text-sm">Seguridad inquebrantable y belleza natural.</p>
@@ -130,14 +114,14 @@
       <div>
         <h4 class="font-bold mb-3">Servicios</h4>
         <ul class="text-gray-400 text-sm space-y-2">
-          <li><a href="paisajismo" class="hover:text-white">Paisajismo</a></li>
-          <li><a href="andamios" class="hover:text-white">Andamios</a></li>
+          <li><a href="../paisajismo/" class="hover:text-white">Paisajismo</a></li>
+          <li><a href="../andamios/" class="hover:text-white">Andamios</a></li>
         </ul>
       </div>
       <div>
         <h4 class="font-bold mb-3">Empresa</h4>
         <ul class="text-gray-400 text-sm space-y-2">
-          <li><a href="index#nosotros" class="hover:text-white">Sobre Nosotros</a></li>
+          <li><a href="../#nosotros" class="hover:text-white">Sobre Nosotros</a></li>
         </ul>
       </div>
       <div>
