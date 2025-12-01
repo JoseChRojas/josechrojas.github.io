@@ -1,593 +1,651 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Gofer Servicios SpA — Paisajismo & Andamios</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gofer Servicios SpA — Andamios y Paisajismo</title>
   <meta name="description" content="Gofer Servicios SpA: soluciones seguras en altura y paisajismo de alto estándar.">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-  <header class="site-header">
-    <!DOCTYPE html>
-    <html lang="es">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Gofer Servicios SpA - Andamios y Paisajismo</title>
-    
-      <!-- Tailwind CSS -->
-      <script src="https://cdn.tailwindcss.com"></script>
-    
-      <!-- Configuración personalizada de Tailwind -->
-      <script>
-        tailwind.config = {
-          theme: {
-            extend: {
-              colors: {
-                gofer: {
-                  red: '#DC2626', // Rojo corporativo
-                  black: '#111827',
-                }
-              },
-              animation: {
-                'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-                'fade-in': 'fadeIn 0.5s ease-out forwards',
-              },
-              keyframes: {
-                fadeInUp: {
-                  '0%': { opacity: '0', transform: 'translateY(20px)' },
-                  '100%': { opacity: '1', transform: 'translateY(0)' },
-                },
-                fadeIn: {
-                  '0%': { opacity: '0' },
-                  '100%': { opacity: '1' },
-                }
-              }
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Configuración personalizada de Tailwind -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gofer: {
+              red: '#DC2626',   // Rojo corporativo
+              black: '#111827', // Negro corporativo
+              green: '#047857', // Verde paisajismo
+            }
+          },
+          animation: {
+            'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+            'fade-in': 'fadeIn 0.5s ease-out forwards',
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
             }
           }
         }
-      </script>
+      }
+    }
+  </script>
 
-      <!-- Iconos Lucide -->
-      <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Iconos Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 
-      <style>
-        /* Estilos base y utilidades extra */
-        html {
-          scroll-behavior: smooth;
-        }
-        body {
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .service-card {
-          transition: all 0.3s ease;
-        }
-        .hidden-service {
-          display: none;
-        }
-      </style>
-    </head>
-    <body class="font-sans text-gray-800 bg-gray-50">
+  <!-- Estilos propios ligeros -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    }
+    .service-card {
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
 
-      <!-- Navegación -->
-      <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4">
-        <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
-            
-          <!-- Logo Customizado -->
-          <a href="#home" class="cursor-pointer flex items-center gap-2 group">
-            <img src="assets/img/logoGofer1.png" alt="Gofer Servicios SpA" class="w-10 h-10 object-contain rounded-md">
-            <div class="flex flex-col">
-              <span class="nav-brand text-xl font-bold text-white leading-none tracking-tight">Gofer<span class="nav-brand text-sm align-top">SpA</span></span>
-              <span class="nav-brand text-[10px] text-white font-medium tracking-wider uppercase">Servicios Integrales</span>
+<body class="font-sans text-gray-800 bg-gray-50">
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4">
+    <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
+      <!-- Logo -->
+      <a href="#home" class="cursor-pointer flex items-center gap-2 group">
+        <img src="assets/img/logoGofer1.png" alt="Gofer Servicios SpA" class="w-10 h-10 object-contain rounded-md">
+        <div class="flex flex-col">
+          <span class="nav-brand text-xl font-bold text-white leading-none tracking-tight">
+            Gofer<span class="nav-brand text-sm align-top">SpA</span>
+          </span>
+          <span class="nav-brand text-[10px] text-white font-medium tracking-wider uppercase">
+            Servicios Integrales
+          </span>
+        </div>
+      </a>
+
+      <!-- Menú escritorio -->
+      <div class="hidden md:flex space-x-8 items-center">
+        <a href="#home" class="nav-link font-medium text-white hover:text-red-600 transition-colors">Inicio</a>
+        <a href="#nosotros" class="nav-link font-medium text-white hover:text-red-600 transition-colors">Nosotros</a>
+        <a href="#servicios" class="nav-link font-medium text-white hover:text-red-600 transition-colors">Servicios</a>
+        <a href="#politicas" class="nav-link font-medium text-white hover:text-red-600 transition-colors">Políticas</a>
+        <a href="#contacto" class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-full font-bold transition-all transform hover:scale-105 shadow-md">
+          Reservar
+        </a>
+      </div>
+
+      <!-- Botón menú móvil -->
+      <div class="md:hidden">
+        <button id="menu-btn" class="text-gray-800 p-2 bg-white/80 rounded-md backdrop-blur-sm shadow-sm">
+          <i data-lucide="menu" class="w-7 h-7"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menú móvil -->
+    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100 py-4 px-4 flex-col space-y-4">
+      <a href="#home" class="mobile-link block py-2 px-4 text-gray-800 font-medium hover:bg-red-50 hover:text-red-600 rounded-lg">Inicio</a>
+      <a href="#nosotros" class="mobile-link block py-2 px-4 text-gray-800 font-medium hover:bg-red-50 hover:text-red-600 rounded-lg">Nosotros</a>
+      <a href="#servicios" class="mobile-link block py-2 px-4 text-gray-800 font-medium hover:bg-red-50 hover:text-red-600 rounded-lg">Servicios</a>
+      <a href="#politicas" class="mobile-link block py-2 px-4 text-gray-800 font-medium hover:bg-red-50 hover:text-red-600 rounded-lg">Políticas</a>
+      <a href="#contacto" class="mobile-link block py-2 px-4 text-gray-800 font-medium hover:bg-red-50 hover:text-red-600 rounded-lg">Contacto</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <!-- Fondo dividido -->
+    <div class="absolute inset-0 flex flex-col md:flex-row z-0">
+      <div class="w-full md:w-1/2 h-1/2 md:h-full bg-gray-900 relative">
+        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop"
+             alt="Andamios Construcción"
+             class="w-full h-full object-cover opacity-40">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
+      </div>
+      <div class="w-full md:w-1/2 h-1/2 md:h-full bg-green-900 relative">
+        <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?q=80&w=2069&auto=format&fit=crop"
+             alt="Paisajismo Jardines"
+             class="w-full h-full object-cover opacity-40">
+        <div class="absolute inset-0 bg-gradient-to-l from-black/60 to-transparent"></div>
+      </div>
+    </div>
+
+    <!-- Contenido hero -->
+    <div class="container mx-auto px-4 md:px-6 relative z-10 text-center text-white mt-10">
+      <div class="animate-fade-in-up">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-lg">
+          Excelencia en <span class="text-gofer-red">Altura</span> <br class="hidden md:block" />
+          y Belleza en <span class="text-green-400">Tierra</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto font-light">
+          Soluciones integrales de andamios certificados y paisajismo de alto estándar para el sector industrial y residencial de élite.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button
+            onclick="filterServices('andamios'); document.getElementById('servicios').scrollIntoView({behavior:'smooth'});"
+            class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-red-600/30 flex items-center justify-center gap-2">
+            <i data-lucide="construction" class="w-5 h-5"></i>
+            Ver Andamios
+          </button>
+          <button
+            onclick="filterServices('paisajismo'); document.getElementById('servicios').scrollIntoView({behavior:'smooth'});"
+            class="bg-white hover:bg-gray-100 text-gray-900 px-8 py-3 rounded-full font-bold text-lg transition-all shadow-lg flex items-center justify-center gap-2">
+            <i data-lucide="flower-2" class="w-5 h-5 text-green-600"></i>
+            Ver Paisajismo
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE NOSOTROS -->
+  <section id="nosotros" class="py-20 bg-white">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 relative inline-block">
+          Sobre Gofer SpA
+          <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-red-600 rounded"></div>
+        </h2>
+        <p class="text-gray-600 max-w-2xl mx-auto mt-4">
+          Fundada en 2019, nos dedicamos a garantizar la excelencia operativa y la creación de entornos estéticos duraderos.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Misión -->
+        <div class="bg-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border-t-4 border-red-600 group">
+          <div class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-red-600 transition-colors">
+            <i data-lucide="shield-check" class="w-8 h-8 text-red-600 group-hover:text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Nuestra Misión</h3>
+          <p class="text-gray-600 leading-relaxed text-sm">
+            Ofrecer soluciones integrales de trabajo seguro en altura y paisajismo de alto estándar, garantizando excelencia operativa y entornos estéticos para clientes de élite, incluyendo templos.
+          </p>
+        </div>
+
+        <!-- Visión -->
+        <div class="bg-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border-t-4 border-gray-800 group">
+          <div class="w-14 h-14 bg-gray-200 rounded-full flex items-center justify-center mb-6 group-hover:bg-gray-800 transition-colors">
+            <i data-lucide="clock" class="w-8 h-8 text-gray-800 group-hover:text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Nuestra Visión</h3>
+          <p class="text-gray-600 leading-relaxed text-sm">
+            Ser la empresa líder y referente nacional, reconocida por la seguridad inquebrantable de nuestros andamios y la calidad excepcional de nuestros proyectos de paisajismo.
+          </p>
+        </div>
+
+        <!-- Valores -->
+        <div class="bg-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border-t-4 border-red-600 group">
+          <div class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-red-600 transition-colors">
+            <i data-lucide="check-circle-2" class="w-8 h-8 text-red-600 group-hover:text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Nuestros Valores</h3>
+          <ul class="text-gray-600 space-y-2 text-sm">
+            <li><strong class="text-gray-900">Seguridad:</strong> Prioridad absoluta en altura.</li>
+            <li><strong class="text-gray-900">Excelencia:</strong> Precisión técnica y detalle.</li>
+            <li><strong class="text-gray-900">Integridad:</strong> Honestidad y transparencia.</li>
+            <li><strong class="text-gray-900">Compromiso:</strong> Estética y durabilidad.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nuestros Servicios</h2>
+        <div class="flex justify-center flex-wrap gap-4 mt-8">
+          <button onclick="filterServices('all')" id="btn-all"
+                  class="filter-btn px-6 py-2 rounded-full font-medium transition-colors bg-gray-900 text-white hover:bg-gray-800">
+            Ver Todo
+          </button>
+          <button onclick="filterServices('andamios')" id="btn-andamios"
+                  class="filter-btn px-6 py-2 rounded-full font-medium transition-colors bg-white text-gray-600 hover:bg-gray-200">
+            Andamios
+          </button>
+          <button onclick="filterServices('paisajismo')" id="btn-paisajismo"
+                  class="filter-btn px-6 py-2 rounded-full font-medium transition-colors bg-white text-gray-600 hover:bg-gray-200">
+            Paisajismo
+          </button>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+
+        <!-- Card Andamios -->
+        <div id="service-andamios" class="service-card bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl flex flex-col h-full animate-fade-in">
+          <div class="h-64 overflow-hidden relative group">
+            <div class="absolute inset-0 bg-gray-900/20 group-hover:bg-transparent transition-all z-10"></div>
+            <img src="assets/img/andamio.jpg"
+                 alt="Servicio de Andamios"
+                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+            <div class="absolute top-4 left-4 z-20 bg-red-600 text-white px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">
+              Certificado
             </div>
-          </a>
-
-          <!-- Menú Escritorio -->
-          <div class="hidden md:flex space-x-8 items-center">
-            <a href="#home" class="font-medium text-white hover:text-red-600 transition-colors nav-link">Inicio</a>
-            <a href="#nosotros" class="font-medium text-white hover:text-red-600 transition-colors nav-link">Nosotros</a>
-            <a href="#servicios" class="font-medium text-white hover:text-red-600 transition-colors nav-link">Servicios</a>
-            <a href="#politicas" class="font-medium text-white hover:text-red-600 transition-colors nav-link">Políticas</a>
-            <a href="#contacto" class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-full font-bold transition-all transform hover:scale-105 shadow-md">Reservar</a>
           </div>
-
-          <!-- Botón Menú Móvil -->
-          <div class="md:hidden">
-            <button id="menu-btn" class="text-gray-800 p-2 bg-white/80 rounded-md backdrop-blur-sm shadow-sm">
-              <i data-lucide="menu" class="w-7 h-7"></i>
-            </button>
-          </div>
-        </div>
-
-        <!-- Menú Móvil Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100 py-4 px-4 flex-col space-y-4">
-          <a href="#home" class="block py-2 px-4 text-gray-800 font-medium hover:bg-red-50 hover:text-red-600 rounded-lg mobile-link">Inicio</a>
-          <a href="#nosotros" class="block py-2 px-4 text-gray-800 font-medium hover:bg-red-50 hover:text-red-600 rounded-lg mobile-link">Nosotros</a>
-          <a href="#servicios" class="block py-2 px-4 text-gray-800 font-medium hover:bg-red-50 hover:text-red-600 rounded-lg mobile-link">Servicios</a>
-          <a href="#politicas" class="block py-2 px-4 text-gray-800 font-medium hover:bg-red-50 hover:text-red-600 rounded-lg mobile-link">Políticas</a>
-          <a href="#contacto" class="block py-2 px-4 text-gray-800 font-medium hover:bg-red-50 hover:text-red-600 rounded-lg mobile-link">Contacto</a>
-        </div>
-      </nav>
-
-      <!-- Hero Section -->
-      <section id="home" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
-        <!-- Fondo Dividido -->
-        <div class="absolute inset-0 flex flex-col md:flex-row z-0">
-          <div class="w-full md:w-1/2 h-1/2 md:h-full bg-gray-900 relative">
-            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop" 
-               alt="Andamios Construcción" 
-               class="w-full h-full object-cover opacity-40">
-            <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
-          </div>
-          <div class="w-full md:w-1/2 h-1/2 md:h-full bg-green-900 relative">
-            <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?q=80&w=2069&auto=format&fit=crop" 
-               alt="Paisajismo Jardines" 
-               class="w-full h-full object-cover opacity-40">
-            <div class="absolute inset-0 bg-gradient-to-l from-black/60 to-transparent"></div>
-          </div>
-        </div>
-
-        <!-- Contenido Hero -->
-        <div class="container mx-auto px-4 md:px-6 relative z-10 text-center text-white mt-10">
-          <div class="animate-fade-in-up">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-lg">
-              Excelencia en <span class="text-red-500">Altura</span> <br class="hidden md:block"/>
-              y Belleza en <span class="text-green-400">Tierra</span>
-            </h1>
-            <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto font-light">
-              Soluciones integrales de andamios certificados y paisajismo de alto estándar para el sector industrial y residencial de élite.
+          <div class="p-8 flex-grow flex flex-col">
+            <div class="flex items-center gap-3 mb-4">
+              <i data-lucide="construction" class="w-6 h-6 text-red-600"></i>
+              <h3 class="text-2xl font-bold text-gray-900">Servicio de Andamios</h3>
+            </div>
+            <p class="italic text-gray-500 mb-4 font-serif border-l-4 border-red-200 pl-4">
+              "Eleva tu proyecto con seguridad y confianza"
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-              <button onclick="filterServices('andamios'); document.getElementById('servicios').scrollIntoView();" 
-                  class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-red-600/30 flex items-center justify-center gap-2">
-                <i data-lucide="construction" class="w-5 h-5"></i>
-                Ver Andamios
-              </button>
-              <button onclick="filterServices('paisajismo'); document.getElementById('servicios').scrollIntoView();" 
-                  class="bg-white hover:bg-gray-100 text-gray-900 px-8 py-3 rounded-full font-bold text-lg transition-all shadow-lg flex items-center justify-center gap-2">
-                <i data-lucide="flower-2" class="w-5 h-5 text-green-600"></i>
-                Ver Paisajismo
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Sobre Nosotros -->
-      <section id="nosotros" class="py-20 bg-white">
-        <div class="container mx-auto px-4 md:px-6">
-          <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 relative inline-block">
-              Sobre Gofer SpA
-              <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-red-600 rounded"></div>
-            </h2>
-            <p class="text-gray-600 max-w-2xl mx-auto mt-4">
-              Fundada en 2019, nos dedicamos a garantizar la excelencia operativa y la creación de entornos estéticos duraderos.
+            <p class="text-gray-600 mb-6 flex-grow">
+              Arriendo y montaje de andamios de alta calidad para construcción y mantenimiento. Diseñados para estabilidad y cumplimiento normativo estricto.
             </p>
-          </div>
-
-          <div class="grid md:grid-cols-3 gap-8">
-            <!-- Misión -->
-            <div class="bg-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border-t-4 border-red-600 group">
-              <div class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-red-600 transition-colors">
-                <i data-lucide="shield-check" class="w-8 h-8 text-red-600 group-hover:text-white"></i>
-              </div>
-              <h3 class="text-xl font-bold mb-4">Nuestra Misión</h3>
-              <p class="text-gray-600 leading-relaxed text-sm">
-                Ofrecer soluciones integrales de trabajo seguro en altura y paisajismo de alto estándar, garantizando excelencia operativa y entornos estéticos para clientes de élite, incluyendo templos.
-              </p>
-            </div>
-
-            <!-- Visión -->
-            <div class="bg-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border-t-4 border-gray-800 group">
-              <div class="w-14 h-14 bg-gray-200 rounded-full flex items-center justify-center mb-6 group-hover:bg-gray-800 transition-colors">
-                <i data-lucide="clock" class="w-8 h-8 text-gray-800 group-hover:text-white"></i>
-              </div>
-              <h3 class="text-xl font-bold mb-4">Nuestra Visión</h3>
-              <p class="text-gray-600 leading-relaxed text-sm">
-                Ser la empresa líder y referente nacional, reconocida por la seguridad inquebrantable de nuestros andamios y la calidad excepcional de nuestros proyectos de paisajismo.
-              </p>
-            </div>
-
-            <!-- Valores -->
-            <div class="bg-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border-t-4 border-red-600 group">
-              <div class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-red-600 transition-colors">
-                <i data-lucide="check-circle-2" class="w-8 h-8 text-red-600 group-hover:text-white"></i>
-              </div>
-              <h3 class="text-xl font-bold mb-4">Nuestros Valores</h3>
-              <ul class="text-gray-600 space-y-2 text-sm">
-                <li><strong class="text-gray-900">Seguridad:</strong> Prioridad absoluta en altura.</li>
-                <li><strong class="text-gray-900">Excelencia:</strong> Precisión técnica y detalle.</li>
-                <li><strong class="text-gray-900">Integridad:</strong> Honestidad y transparencia.</li>
-                <li><strong class="text-gray-900">Compromiso:</strong> Estética y durabilidad.</li>
-              </ul>
+            <ul class="space-y-2 mb-8 text-sm text-gray-600">
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i> Personal especializado en armado/desarmado</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i> Estándares técnicos y seguridad</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i> Precio por cuerpo</li>
+            </ul>
+            <div class="mt-auto w-full flex flex-col sm:flex-row gap-3">
+              <a href="andamios/" class="flex-1 text-center py-3 border rounded-xl text-gray-700 bg-white hover:bg-gray-50 transition-colors">
+                Ver Detalles
+              </a>
+              <a href="#contacto" onclick="preselectService('Arriendo de Andamios')" class="flex-1 text-center py-3 border-2 border-red-600 text-red-600 font-bold rounded-xl hover:bg-red-600 hover:text-white transition-colors">
+                Cotizar Andamios
+              </a>
             </div>
           </div>
         </div>
-      </section>
 
-      <!-- Servicios -->
-      <section id="servicios" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4 md:px-6">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nuestros Servicios</h2>
-            <div class="flex justify-center flex-wrap gap-4 mt-8">
-              <button onclick="filterServices('all')" id="btn-all" class="filter-btn px-6 py-2 rounded-full font-medium transition-colors bg-gray-900 text-white hover:bg-gray-800">
-                Ver Todo
+        <!-- Card Paisajismo -->
+        <div id="service-paisajismo" class="service-card bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl flex flex-col h-full animate-fade-in">
+          <div class="h-64 overflow-hidden relative group">
+            <div class="absolute inset-0 bg-gray-900/20 group-hover:bg-transparent transition-all z-10"></div>
+            <img src="assets/img/paisajismo1.jpg"
+                 alt="Servicio de Paisajismo"
+                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+            <div class="absolute top-4 left-4 z-20 bg-green-600 text-white px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">
+              Alto Estándar
+            </div>
+          </div>
+          <div class="p-8 flex-grow flex flex-col">
+            <div class="flex items-center gap-3 mb-4">
+              <i data-lucide="flower-2" class="w-6 h-6 text-green-600"></i>
+              <h3 class="text-2xl font-bold text-gray-900">Servicio de Paisajismo</h3>
+            </div>
+            <p class="italic text-gray-500 mb-4 font-serif border-l-4 border-green-200 pl-4">
+              "Donde la creatividad florece"
+            </p>
+            <p class="text-gray-600 mb-6 flex-grow">
+              Transformamos espacios exteriores en hermosos jardines que cumplen los más altos estándares. Especialistas en templos y entornos de élite.
+            </p>
+            <ul class="space-y-2 mb-8 text-sm text-gray-600">
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i> Diseño, ejecución y mantención</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i> Acabados impecables</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i> Valor según montaje y superficie</li>
+            </ul>
+            <div class="mt-auto w-full flex flex-col sm:flex-row gap-3">
+              <a href="paisajismo/" class="flex-1 text-center py-3 border rounded-xl text-gray-700 bg-white hover:bg-gray-50 transition-colors">
+                Ver Detalles
+              </a>
+              <a href="#contacto" onclick="preselectService('Proyecto de Paisajismo')" class="flex-1 text-center py-3 border-2 border-green-600 text-green-600 font-bold rounded-xl hover:bg-green-600 hover:text-white transition-colors">
+                Cotizar Paisajismo
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- POLÍTICAS -->
+  <section id="politicas" class="py-16 bg-white border-t border-gray-100">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Políticas Importantes</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+
+          <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-yellow-500">
+            <h3 class="font-bold text-lg mb-3 flex items-center gap-2">
+              <i data-lucide="clock" class="w-5 h-5 text-yellow-600"></i> Cancelaciones
+            </h3>
+            <ul class="text-sm text-gray-600 space-y-2">
+              <li>• Sin cargo: Más de 48 horas de anticipación.</li>
+              <li>• Cargo 50%: Dentro de las 48 horas previas (Andamios).</li>
+              <li>• Cargo 100%: Cancelación el mismo día.</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-blue-500">
+            <h3 class="font-bold text-lg mb-3 flex items-center gap-2">
+              <i data-lucide="hammer" class="w-5 h-5 text-blue-600"></i> Condiciones de Trabajo
+            </h3>
+            <ul class="text-sm text-gray-600 space-y-2">
+              <li>• El cliente debe asegurar acceso al área de trabajo.</li>
+              <li>• Garantía sujeta al cumplimiento de recomendaciones.</li>
+              <li>• Reservas sujetas a disponibilidad de equipo/personal.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="py-20 bg-gray-900 text-white relative">
+    <div class="absolute inset-0 overflow-hidden">
+      <svg class="absolute top-0 right-0 w-1/2 h-full opacity-5" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path d="M0 0 L100 0 L100 100 Z" fill="white" />
+      </svg>
+    </div>
+
+    <div class="container mx-auto px-4 md:px-6 relative z-10">
+      <div class="grid md:grid-cols-2 gap-12">
+
+        <!-- Info contacto -->
+        <div>
+          <h2 class="text-3xl font-bold mb-6">Contáctanos</h2>
+          <p class="text-gray-400 mb-8">
+            Estamos listos para elevar tu proyecto o transformar tu jardín. Escríbenos para una cotización formal.
+          </p>
+
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-red-600/20 flex items-center justify-center text-red-500">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-white">Ubicación</h4>
+                <p class="text-gray-400">Barros Arana 492, Concepción, Chile</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-red-600/20 flex items-center justify-center text-red-500">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-white">Email</h4>
+                <p class="text-gray-400">Contacto@gofer.cl</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-red-600/20 flex items-center justify-center text-red-500">
+                <i data-lucide="clock" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-white">Horarios</h4>
+                <p class="text-gray-400">Lun - Jue: 8:00 am - 18:00 hrs</p>
+                <p class="text-gray-400">Viernes: 8:00 am - 17:00 hrs</p>
+              </div>
+            </div>
+
+            <div class="pt-6">
+              <a href="https://www.instagram.com/gofer.spa" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center gap-2 text-pink-500 hover:text-pink-400 transition-colors">
+                <i data-lucide="instagram" class="w-6 h-6"></i>
+                <span class="font-medium">Síguenos en Instagram</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulario -->
+        <div class="bg-white text-gray-800 rounded-3xl p-8 shadow-2xl">
+          <h3 class="text-2xl font-bold mb-6 text-gray-900">Formulario de Reserva</h3>
+          <form id="contact-form" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
+                <input name="name" type="text" class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all" placeholder="Tu nombre" required>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Apellido</label>
+                <input name="lastname" type="text" class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all" placeholder="Tu apellido" required>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+              <input name="email" type="email" class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all" placeholder="correo@ejemplo.com" required>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
+              <input name="phone" type="tel" class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all" placeholder="+56 9 ..." required>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Servicio de Interés</label>
+              <select id="service-select" name="service" class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all">
+                <option value="">Seleccione un servicio...</option>
+                <option value="Arriendo de Andamios">Arriendo de Andamios</option>
+                <option value="Proyecto de Paisajismo">Proyecto de Paisajismo</option>
+                <option value="Otro">Otro</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Mensaje / Detalles</label>
+              <textarea name="message" rows="3" class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all" placeholder="Describa su proyecto o necesidad..." required></textarea>
+            </div>
+
+            <div class="pt-2">
+              <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-xl transition-all shadow-lg hover:shadow-red-600/30">
+                Enviar Solicitud
               </button>
-              <button onclick="filterServices('andamios')" id="btn-andamios" class="filter-btn px-6 py-2 rounded-full font-medium transition-colors bg-white text-gray-600 hover:bg-gray-200">
-                Andamios
-              </button>
-              <button onclick="filterServices('paisajismo')" id="btn-paisajismo" class="filter-btn px-6 py-2 rounded-full font-medium transition-colors bg-white text-gray-600 hover:bg-gray-200">
-                Paisajismo
-              </button>
-            </div>
-          </div>
-
-          <div class="grid md:grid-cols-2 gap-12 items-start">
-                
-            <!-- Card Andamios -->
-            <div id="service-andamios" class="service-card bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl flex flex-col h-full animate-fade-in">
-              <div class="h-64 overflow-hidden relative group">
-                <div class="absolute inset-0 bg-gray-900/20 group-hover:bg-transparent transition-all z-10"></div>
-                <img src="assets/img/andamio.jpg" 
-                   alt="Servicio de Andamios" 
-                   class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
-                <div class="absolute top-4 left-4 z-20 bg-red-600 text-white px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">
-                  Certificado
-                </div>
-              </div>
-              <div class="p-8 flex-grow flex flex-col">
-                <div class="flex items-center gap-3 mb-4">
-                  <i data-lucide="construction" class="w-6 h-6 text-red-600"></i>
-                  <h3 class="text-2xl font-bold text-gray-900">Servicio de Andamios</h3>
-                </div>
-                <p class="italic text-gray-500 mb-4 font-serif border-l-4 border-red-200 pl-4">"Eleva tu proyecto con seguridad y confianza"</p>
-                <p class="text-gray-600 mb-6 flex-grow">
-                  Arriendo y montaje de andamios de alta calidad para construcción y mantenimiento. Diseñados para estabilidad y cumplimiento normativo estricto.
-                </p>
-                <ul class="space-y-2 mb-8 text-sm text-gray-600">
-                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i> Personal especializado en armado/desarmado</li>
-                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i> Estándares técnicos y seguridad</li>
-                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i> Precio por cuerpo</li>
-                </ul>
-                <div class="mt-auto w-full flex flex-col sm:flex-row gap-3">
-                  <a href="andamios/" class="flex-1 text-center py-3 border rounded-xl text-gray-700 bg-white hover:bg-gray-50 transition-colors">Ver Detalles</a>
-                  <a href="#contacto" onclick="preselectService('Arriendo de Andamios')" class="flex-1 text-center py-3 border-2 border-red-600 text-red-600 font-bold rounded-xl hover:bg-red-600 hover:text-white transition-colors">Cotizar Andamios</a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card Paisajismo -->
-            <div id="service-paisajismo" class="service-card bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl flex flex-col h-full animate-fade-in">
-              <div class="h-64 overflow-hidden relative group">
-                <div class="absolute inset-0 bg-gray-900/20 group-hover:bg-transparent transition-all z-10"></div>
-                <img src="assets/img/paisajismo1.jpg" 
-                   alt="Servicio de Paisajismo" 
-                   class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
-                <div class="absolute top-4 left-4 z-20 bg-green-600 text-white px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">
-                  Alto Estándar
-                </div>
-              </div>
-              <div class="p-8 flex-grow flex flex-col">
-                <div class="flex items-center gap-3 mb-4">
-                  <i data-lucide="flower-2" class="w-6 h-6 text-green-600"></i>
-                  <h3 class="text-2xl font-bold text-gray-900">Servicio de Paisajismo</h3>
-                </div>
-                <p class="italic text-gray-500 mb-4 font-serif border-l-4 border-green-200 pl-4">"Donde la creatividad florece"</p>
-                <p class="text-gray-600 mb-6 flex-grow">
-                  Transformamos espacios exteriores en hermosos jardines que cumplen los más altos estándares. Especialistas en templos y entornos de élite.
-                </p>
-                <ul class="space-y-2 mb-8 text-sm text-gray-600">
-                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i> Diseño, ejecución y mantención</li>
-                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i> Acabados impecables</li>
-                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i> Valor según montaje y superficie</li>
-                </ul>
-                <div class="mt-auto w-full flex flex-col sm:flex-row gap-3">
-                  <a href="paisajismo/" class="flex-1 text-center py-3 border rounded-xl text-gray-700 bg-white hover:bg-gray-50 transition-colors">Ver Detalles</a>
-                  <a href="#contacto" onclick="preselectService('Proyecto de Paisajismo')" class="flex-1 text-center py-3 border-2 border-green-600 text-green-600 font-bold rounded-xl hover:bg-green-600 hover:text-white transition-colors">Cotizar Paisajismo</a>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- Políticas -->
-      <section id="politicas" class="py-16 bg-white border-t border-gray-100">
-        <div class="container mx-auto px-4 md:px-6">
-          <div class="max-w-4xl mx-auto">
-            <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Políticas Importantes</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                    
-              <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-yellow-500">
-                <h3 class="font-bold text-lg mb-3 flex items-center gap-2">
-                  <i data-lucide="clock" class="w-5 h-5 text-yellow-600"></i> Cancelaciones
-                </h3>
-                <ul class="text-sm text-gray-600 space-y-2">
-                  <li>• Sin cargo: Más de 48 horas de anticipación.</li>
-                  <li>• Cargo 50%: Dentro de las 48 horas previas (Andamios).</li>
-                  <li>• Cargo 100%: Cancelación el mismo día.</li>
-                </ul>
-              </div>
-
-              <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-blue-500">
-                <h3 class="font-bold text-lg mb-3 flex items-center gap-2">
-                  <i data-lucide="hammer" class="w-5 h-5 text-blue-600"></i> Condiciones de Trabajo
-                </h3>
-                <ul class="text-sm text-gray-600 space-y-2">
-                  <li>• El cliente debe asegurar acceso al área de trabajo.</li>
-                  <li>• Garantía sujeta al cumplimiento de recomendaciones.</li>
-                  <li>• Reservas sujetas a disponibilidad de equipo/personal.</li>
-                </ul>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contacto -->
-      <section id="contacto" class="py-20 bg-gray-900 text-white relative">
-        <div class="absolute inset-0 overflow-hidden">
-           <!-- Forma abstracta fondo -->
-           <svg class="absolute top-0 right-0 w-1/2 h-full opacity-5" viewBox="0 0 100 100" preserveAspectRatio="none">
-             <path d="M0 0 L100 0 L100 100 Z" fill="white" />
-           </svg>
-        </div>
-
-        <div class="container mx-auto px-4 md:px-6 relative z-10">
-          <div class="grid md:grid-cols-2 gap-12">
-                
-            <!-- Info Contacto -->
-            <div>
-              <h2 class="text-3xl font-bold mb-6">Contáctanos</h2>
-              <p class="text-gray-400 mb-8">
-                Estamos listos para elevar tu proyecto o transformar tu jardín. Escríbenos para una cotización formal.
-              </p>
-
-              <div class="space-y-6">
-                <div class="flex items-start gap-4">
-                  <div class="w-10 h-10 rounded-full bg-red-600/20 flex items-center justify-center text-red-500">
-                    <i data-lucide="map-pin" class="w-5 h-5"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-bold text-white">Ubicación</h4>
-                    <p class="text-gray-400">Barros Arana 492, Concepción, Chile</p>
-                  </div>
-                </div>
-
-                <div class="flex items-start gap-4">
-                  <div class="w-10 h-10 rounded-full bg-red-600/20 flex items-center justify-center text-red-500">
-                    <i data-lucide="mail" class="w-5 h-5"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-bold text-white">Email</h4>
-                    <p class="text-gray-400">Contacto@gofer.cl</p>
-                  </div>
-                </div>
-
-                <div class="flex items-start gap-4">
-                  <div class="w-10 h-10 rounded-full bg-red-600/20 flex items-center justify-center text-red-500">
-                    <i data-lucide="clock" class="w-5 h-5"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-bold text-white">Horarios</h4>
-                    <p class="text-gray-400">Lun - Jue: 8:00 am - 18:00 hrs</p>
-                    <p class="text-gray-400">Viernes: 8:00 am - 17:00 hrs</p>
-                  </div>
-                </div>
-
-                <div class="pt-6">
-                  <a href="https://www.instagram.com/gofer.spa" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-pink-500 hover:text-pink-400 transition-colors">
-                    <i data-lucide="instagram" class="w-6 h-6"></i>
-                    <span class="font-medium">Síguenos en Instagram</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Formulario -->
-            <div class="bg-white text-gray-800 rounded-3xl p-8 shadow-2xl">
-              <h3 class="text-2xl font-bold mb-6 text-gray-900">Formulario de Reserva</h3>
-              <form class="space-y-4">
-                <div class="grid grid-cols-2 gap-4">
-                  <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
-                    <input type="text" class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all" placeholder="Tu nombre" required>
-                  </div>
-                  <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Apellido</label>
-                    <input type="text" class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all" placeholder="Tu apellido" required>
-                  </div>
-                </div>
-
-                <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                  <input type="email" class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all" placeholder="correo@ejemplo.com" required>
-                </div>
-
-                <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
-                  <input type="tel" class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all" placeholder="+56 9 ..." required>
-                </div>
-
-                <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-1">Servicio de Interés</label>
-                  <select id="service-select" class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all">
-                    <option>Seleccione un servicio...</option>
-                    <option>Arriendo de Andamios</option>
-                    <option>Proyecto de Paisajismo</option>
-                    <option>Otro</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-1">Mensaje / Detalles</label>
-                  <textarea rows="3" class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all" placeholder="Describa su proyecto o necesidad..." required></textarea>
-                </div>
-
-                <div class="pt-2">
-                  <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-xl transition-all shadow-lg hover:shadow-red-600/30">
-                    Enviar Solicitud
-                  </button>
-                  <p class="text-xs text-center text-gray-500 mt-3">
-                    Al enviar, aceptas nuestras políticas de privacidad.
-                  </p>
-                </div>
-              </form>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- Footer -->
-      <footer class="bg-black text-white py-12 border-t border-gray-800">
-        <div class="container mx-auto px-4 text-center md:text-left">
-          <div class="grid md:grid-cols-4 gap-8 mb-8">
-            <div class="col-span-1 md:col-span-1">
-              <div class="flex items-center gap-2 justify-center md:justify-start mb-4">
-                <div class="relative w-8 h-8 flex items-center justify-center bg-white rounded-full border border-gray-600 overflow-hidden">
-                  <span class="text-red-600 font-extrabold text-lg leading-none" style="font-family: Arial, sans-serif;">G</span>
-                </div>
-                <span class="text-lg font-bold">Gofer<span class="text-xs">SpA</span></span>
-              </div>
-              <p class="text-gray-500 text-sm">
-                Seguridad inquebrantable y belleza natural.
+              <p class="text-xs text-center text-gray-500 mt-3">
+                Al enviar, aceptas nuestras políticas de privacidad.
               </p>
             </div>
-            <div>
-              <h4 class="font-bold mb-4">Servicios</h4>
-              <ul class="space-y-2 text-gray-400 text-sm">
-                <li><a href="#servicios" onclick="filterServices('andamios')" class="hover:text-white cursor-pointer">Andamios Certificados</a></li>
-                <li><a href="#servicios" onclick="filterServices('paisajismo')" class="hover:text-white cursor-pointer">Paisajismo y Jardinería</a></li>
-              </ul>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-white pt-12 pb-6 border-t border-gray-800">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8 mb-8 text-center md:text-left">
+        <!-- Col: marca -->
+        <div>
+          <div class="flex items-center gap-2 justify-center md:justify-start mb-4">
+            <div class="relative w-8 h-8 flex items-center justify-center bg-white rounded-full border border-gray-600 overflow-hidden">
+              <span class="text-red-600 font-extrabold text-lg leading-none">G</span>
             </div>
-            <div>
-              <h4 class="font-bold mb-4">Empresa</h4>
-              <ul class="space-y-2 text-gray-400 text-sm">
-                <li><a href="#" class="hover:text-white">Sobre Nosotros</a></li>
-                <li><a href="#politicas" class="hover:text-white">Políticas</a></li>
-                <li><a href="#contacto" class="hover:text-white">Contacto</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 class="font-bold mb-4">Pagos Aceptados</h4>
-              <div class="flex flex-wrap gap-2 text-xs text-gray-400 justify-center md:justify-start">
-                <span class="px-2 py-1 border border-gray-700 rounded">Transferencia</span>
-                <span class="px-2 py-1 border border-gray-700 rounded">Efectivo</span>
-                <span class="px-2 py-1 border border-gray-700 rounded">Online</span>
-              </div>
-            </div>
+            <span class="text-lg font-bold">Gofer<span class="text-xs">SpA</span></span>
           </div>
-          <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
-            <p>&copy; 2025 Gofer Servicios SpA. Todos los derechos reservados.</p>
-            <div class="mt-4 md:mt-0 space-x-4">
-              <a href="#" class="hover:text-white">Términos</a>
-              <a href="#" class="hover:text-white">Privacidad</a>
-            </div>
+          <p class="text-gray-500 text-sm max-w-xs mx-auto md:mx-0">
+            Seguridad inquebrantable y belleza natural en cada proyecto, en altura y en tierra.
+          </p>
+        </div>
+
+        <!-- Col: servicios -->
+        <div>
+          <h4 class="font-bold mb-4 text-sm tracking-wide uppercase text-gray-300">Servicios</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li>
+              <a href="#servicios" onclick="filterServices('andamios')" class="hover:text-white cursor-pointer">
+                Andamios Certificados
+              </a>
+            </li>
+            <li>
+              <a href="#servicios" onclick="filterServices('paisajismo')" class="hover:text-white cursor-pointer">
+                Paisajismo y Jardinería
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col: empresa -->
+        <div>
+          <h4 class="font-bold mb-4 text-sm tracking-wide uppercase text-gray-300">Empresa</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li><a href="#nosotros" class="hover:text-white">Sobre Nosotros</a></li>
+            <li><a href="#politicas" class="hover:text-white">Políticas</a></li>
+            <li><a href="#contacto" class="hover:text-white">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Col: pagos -->
+        <div>
+          <h4 class="font-bold mb-4 text-sm tracking-wide uppercase text-gray-300">Pagos Aceptados</h4>
+          <div class="flex flex-wrap gap-2 text-xs text-gray-400 justify-center md:justify-start">
+            <span class="px-2 py-1 border border-gray-700 rounded-full inline-flex items-center gap-1">
+              <i data-lucide="building-2" class="w-3 h-3"></i> Transferencia
+            </span>
+            <span class="px-2 py-1 border border-gray-700 rounded-full inline-flex items-center gap-1">
+              <i data-lucide="wallet" class="w-3 h-3"></i> Efectivo
+            </span>
+            <span class="px-2 py-1 border border-gray-700 rounded-full inline-flex items-center gap-1">
+              <i data-lucide="credit-card" class="w-3 h-3"></i> Online
+            </span>
           </div>
         </div>
-      </footer>
+      </div>
 
-      <!-- Scripts de Funcionalidad -->
-      <script>
-        // Inicializar Iconos
-        lucide.createIcons();
+      <div class="border-t border-gray-800 pt-4 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600 gap-2">
+        <p class="text-center md:text-left">
+          &copy; <span id="year"></span> Gofer Servicios SpA. Todos los derechos reservados.
+        </p>
+        <div class="space-x-4">
+          <a href="#politicas" class="hover:text-white">Términos</a>
+          <a href="#politicas" class="hover:text-white">Privacidad</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-        // 1. Manejo del Navbar (Scroll)
-        const navbar = document.getElementById('navbar');
-        const navLinks = document.querySelectorAll('.nav-link');
-          const brandText = document.querySelectorAll('.nav-brand');
-        
-        window.addEventListener('scroll', () => {
-          if (window.scrollY > 50) {
-            navbar.classList.add('bg-white', 'shadow-lg', 'py-2');
-            navbar.classList.remove('bg-transparent', 'py-4');
-            navLinks.forEach(link => {
-              link.classList.remove('text-gray-900', 'text-white');
-              link.classList.add('text-gray-800');
-            });
-              brandText.forEach(el => {
-                el.classList.remove('text-white');
-                el.classList.add('text-gray-800');
-              });
-          } else {
-            navbar.classList.add('bg-transparent', 'py-4');
-            navbar.classList.remove('bg-white', 'shadow-lg', 'py-2');
-            navLinks.forEach(link => {
-              link.classList.remove('text-gray-800');
-              link.classList.add('text-white');
-            });
-              brandText.forEach(el => {
-                el.classList.remove('text-gray-800');
-                el.classList.add('text-white');
-              });
-          }
+  <!-- SCRIPTS -->
+  <script>
+    // Inicializar iconos
+    lucide.createIcons();
+
+    // Navbar scroll (cambia fondo y colores)
+    const navbar = document.getElementById('navbar');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const brandText = document.querySelectorAll('.nav-brand');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('bg-white', 'shadow-lg', 'py-2');
+        navbar.classList.remove('bg-transparent', 'py-4');
+        navLinks.forEach(link => {
+          link.classList.remove('text-white');
+          link.classList.add('text-gray-800');
         });
-
-        // 2. Menú Móvil
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-
-        menuBtn.addEventListener('click', () => {
-          mobileMenu.classList.toggle('hidden');
-          mobileMenu.classList.toggle('flex');
+        brandText.forEach(el => {
+          el.classList.remove('text-white');
+          el.classList.add('text-gray-800');
         });
-
-        mobileLinks.forEach(link => {
-          link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-            mobileMenu.classList.remove('flex');
-          });
+      } else {
+        navbar.classList.add('bg-transparent', 'py-4');
+        navbar.classList.remove('bg-white', 'shadow-lg', 'py-2');
+        navLinks.forEach(link => {
+          link.classList.remove('text-gray-800');
+          link.classList.add('text-white');
         });
+        brandText.forEach(el => {
+          el.classList.remove('text-gray-800');
+          el.classList.add('text-white');
+        });
+      }
+    });
 
-        // 3. Filtro de Servicios
-        function filterServices(type) {
-          const cardAndamios = document.getElementById('service-andamios');
-          const cardPaisajismo = document.getElementById('service-paisajismo');
-            
-          const btnAll = document.getElementById('btn-all');
-          const btnAndamios = document.getElementById('btn-andamios');
-          const btnPaisajismo = document.getElementById('btn-paisajismo');
+    // Menú móvil
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
 
-          // Resetear botones
-          [btnAll, btnAndamios, btnPaisajismo].forEach(btn => {
-            btn.classList.remove('bg-gray-900', 'text-white', 'bg-red-600', 'bg-green-600');
-            btn.classList.add('bg-white', 'text-gray-600');
-          });
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('flex');
+    });
 
-          if (type === 'all') {
-            cardAndamios.classList.remove('hidden');
-            cardPaisajismo.classList.remove('hidden');
-            btnAll.classList.add('bg-gray-900', 'text-white');
-            btnAll.classList.remove('bg-white', 'text-gray-600');
-          } else if (type === 'andamios') {
-            cardAndamios.classList.remove('hidden');
-            cardPaisajismo.classList.add('hidden');
-            btnAndamios.classList.add('bg-red-600', 'text-white');
-            btnAndamios.classList.remove('bg-white', 'text-gray-600');
-          } else if (type === 'paisajismo') {
-            cardAndamios.classList.add('hidden');
-            cardPaisajismo.classList.remove('hidden');
-            btnPaisajismo.classList.add('bg-green-600', 'text-white');
-            btnPaisajismo.classList.remove('bg-white', 'text-gray-600');
-          }
-        }
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+      });
+    });
 
-        // 4. Preseleccionar en formulario
-        function preselectService(serviceName) {
-          const select = document.getElementById('service-select');
-          select.value = serviceName;
-        }
+    // Filtro servicios
+    function filterServices(type) {
+      const cardAndamios = document.getElementById('service-andamios');
+      const cardPaisajismo = document.getElementById('service-paisajismo');
 
-      </script>
-    </body>
-    </html>
+      const btnAll = document.getElementById('btn-all');
+      const btnAndamios = document.getElementById('btn-andamios');
+      const btnPaisajismo = document.getElementById('btn-paisajismo');
+
+      [btnAll, btnAndamios, btnPaisajismo].forEach(btn => {
+        btn.classList.remove('bg-gray-900', 'text-white', 'bg-red-600', 'bg-green-600');
+        btn.classList.add('bg-white', 'text-gray-600');
+      });
+
+      if (type === 'all') {
+        cardAndamios.classList.remove('hidden');
+        cardPaisajismo.classList.remove('hidden');
+        btnAll.classList.add('bg-gray-900', 'text-white');
+        btnAll.classList.remove('bg-white', 'text-gray-600');
+      } else if (type === 'andamios') {
+        cardAndamios.classList.remove('hidden');
+        cardPaisajismo.classList.add('hidden');
+        btnAndamios.classList.add('bg-red-600', 'text-white');
+        btnAndamios.classList.remove('bg-white', 'text-gray-600');
+      } else if (type === 'paisajismo') {
+        cardAndamios.classList.add('hidden');
+        cardPaisajismo.classList.remove('hidden');
+        btnPaisajismo.classList.add('bg-green-600', 'text-white');
+        btnPaisajismo.classList.remove('bg-white', 'text-gray-600');
+      }
+    }
+
+    // Preseleccionar servicio en el select del formulario
+    function preselectService(serviceName) {
+      const select = document.getElementById('service-select');
+      if (select) select.value = serviceName;
+    }
+
+    // Año dinámico en el footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // “Próximamente” al enviar formulario (sin backend aún)
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const form = this;
+      const submit = form.querySelector('button[type="submit"]');
+      const originalText = submit.textContent;
+
+      submit.textContent = 'Próximamente...';
+      submit.disabled = true;
+
+      const msg = document.createElement('div');
+      msg.className = 'mt-4 text-sm text-green-600 font-medium text-center';
+      msg.textContent = 'Próximamente podrás enviar este formulario directamente.';
+
+      form.appendChild(msg);
+
+      setTimeout(() => {
+        submit.textContent = originalText;
+        submit.disabled = false;
+        if (msg.parentNode) msg.parentNode.removeChild(msg);
+        form.reset();
+      }, 3500);
+    });
+  </script>
+
+</body>
+</html>
