@@ -24,9 +24,49 @@ document.addEventListener('DOMContentLoaded', ()=>{
       sel.value = service;
     }
   }
+
+  // Interceptar todos los formularios del sitio y mostrar mensaje "Próximamente..."
+  document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Evitar múltiples envíos
+      if (form.dataset.submitted === '1') return;
+      form.dataset.submitted = '1';
+
+      // Buscar botón submit
+      const submit = form.querySelector('button[type="submit"], input[type="submit"]');
+      const original = submit ? (submit.tagName === 'INPUT' ? submit.value : submit.textContent) : null;
+
+      // Mostrar texto en el botón si existe
+      if (submit) {
+        if (submit.tagName === 'INPUT') submit.value = 'Próximamente...';
+        else submit.textContent = 'Próximamente...';
+        submit.disabled = true;
+      }
+
+      // Insertar mensaje debajo del formulario
+      const msg = document.createElement('div');
+      msg.className = 'mt-4 text-sm text-green-600 font-medium';
+      msg.textContent = 'Próximamente...';
+      form.appendChild(msg);
+
+      // Mantener el mensaje visible un tiempo y luego resetear el formulario visualmente
+      setTimeout(() => {
+        if (submit) {
+          if (submit.tagName === 'INPUT') submit.value = original || '';
+          else submit.textContent = original || 'Enviar';
+          submit.disabled = false;
+        }
+        form.dataset.submitted = '0';
+        if (msg && msg.parentNode) msg.parentNode.removeChild(msg);
+      }, 3500);
+    });
+  });
 });
 
 function handleForm(e){
+  // Nota: esta función queda disponible si quieres usar el fallback mailto desde un handler explícito.
   e.preventDefault();
   const form = e.currentTarget || document.getElementById('contact-form');
   const data = new FormData(form);
@@ -44,7 +84,7 @@ function handleForm(e){
   ];
   const body = encodeURIComponent(bodyLines.join('\n'));
 
-  // mailto fallback to company email
-  window.location.href = `mailto:Contacto@gofer.cl?subject=${subject}&body=${body}`;
+  // Si prefieres activar el mailto, descomenta la siguiente línea
+  // window.location.href = `mailto:Contacto@gofer.cl?subject=${subject}&body=${body}`;
   return false;
 }
