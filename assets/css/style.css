@@ -36,7 +36,11 @@ html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial,sans-serif;colo
 .services{padding:2rem 0}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
 .service-card{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 6px 20px rgba(2,6,23,0.06);text-align:center}
-.service-card img{width:140px;height:140px;margin:0 auto 1rem;display:block;border-radius:50%;object-fit:cover;background:transparent}
+.service-card img{display:block;margin:0;object-fit:cover;background:transparent;border-radius:0}
+.service-card .h-64 img, .service-card .hero-img {
+  width:100%;
+  height:100%;
+}
 .tagline{color:var(--brand-green);font-weight:600}
 .policies{padding:2rem 0}
 .card{background:var(--card);padding:1rem;border-radius:8px}
