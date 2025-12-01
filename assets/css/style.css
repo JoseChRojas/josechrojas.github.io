@@ -1,0 +1,79 @@
+
+/* Gofer Servicios SpA - estilos base */
+:root{
+  --container:1100px;
+  /* Paleta basada en los logos proporcionados */
+  --primary-red: #d51b1b; /* color principal rojo del logo (aprox.) */
+  --brand-black: #000000; /* negro del logo */
+  --brand-green: #0b6b4a; /* verde para paisajismo */
+  --accent:#f59e0b; /* acento dorado (opcional) */
+  --muted:#6b7280;
+  --bg:#fbfdfb;
+  --card:#ffffff;
+  --text:#0f172a;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial,sans-serif;color:var(--text);background:var(--bg)}
+.container{max-width:var(--container);margin:0 auto;padding:0 1rem}
+.site-header{background:var(--card);box-shadow:0 1px 4px rgba(2,6,23,0.06);position:sticky;top:0;z-index:40}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:.75rem 0}
+.logo{font-family:Merriweather, serif;font-weight:700;color:var(--primary-red);text-decoration:none;display:flex;align-items:center;gap:.5rem}
+.logo-img{height:44px;display:inline-block}
+.nav-list{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
+.nav-list a{text-decoration:none;color:var(--text);padding:.25rem .5rem;border-radius:6px}
+.nav-list a[aria-current]{background:rgba(11,107,74,0.06)}
+.nav-toggle{display:none;border:0;background:transparent;font-size:1.25rem}
+.hero{display:flex;gap:2rem;align-items:center;padding:3rem 0}
+.hero-inner{flex:1}
+.hero h1{font-family:Merriweather, serif;font-size:2.2rem;margin:0 0 .5rem;color:var(--primary-red)}
+.lead{color:var(--muted);margin-bottom:1rem}
+.ctas .btn{margin-right:.5rem}
+.quick-info{list-style:none;padding:0;margin-top:1rem;color:var(--muted)}
+.quick-info li{margin-bottom:.25rem}
+.hero-illustration img{max-width:380px;width:100%;height:auto;border-radius:10px}
+.btn{display:inline-block;background:var(--primary-red);color:white;padding:.6rem 1rem;border-radius:8px;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--primary-red);border:1px solid rgba(213,27,27,0.12)}
+.services{padding:2rem 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.service-card{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 6px 20px rgba(2,6,23,0.06);text-align:center}
+.service-card img{width:140px;height:140px;margin:0 auto 1rem;display:block;border-radius:50%;object-fit:cover;background:transparent}
+.tagline{color:var(--brand-green);font-weight:600}
+.policies{padding:2rem 0}
+.card{background:var(--card);padding:1rem;border-radius:8px}
+.about-section{padding:2rem 0}
+.contact-section{padding:2rem 0}
+.contact-form{display:grid;gap:.75rem;max-width:720px}
+.contact-form label{display:block}
+.contact-form input,.contact-form textarea,.contact-form select{width:100%;padding:.6rem;border:1px solid #e6e9ee;border-radius:6px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.values{list-style:none;padding:0}
+.site-footer{padding:1.25rem 0;text-align:center;color:var(--muted);font-size:.95rem}
+
+@media (max-width:780px){
+  .nav-list{display:none;flex-direction:column;background:var(--card);position:absolute;right:1rem;top:56px;padding:1rem;border-radius:8px;box-shadow:0 6px 20px rgba(2,6,23,.08)}
+  .nav-toggle{display:block}
+  .hero{flex-direction:column}
+  .grid-2{grid-template-columns:1fr}
+}
+
+/* Footer styles */
+.site-footer-wrapper{background:var(--brand-black);color:#fff}
+.site-footer-top{background:var(--primary-red);color:#fff;padding:.5rem 0;font-size:.95rem}
+.site-footer-top .container{display:flex;justify-content:space-between;align-items:center}
+.site-footer-top a{color:#fff;text-decoration:none}
+.site-footer-main{padding:2rem 0}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+.footer-col h4{color:var(--primary-red);margin:0 0 .5rem}
+.footer-col p,.footer-col li{color:#e6e6e6;font-size:.95rem;line-height:1.5}
+.footer-col ul{list-style:none;padding:0;margin:0}
+.footer-col a{color:#f3f3f3;text-decoration:none}
+.footer-bottom{background:rgba(255,255,255,0.03);padding:.75rem 0;text-align:center;color:#dcdcdc;font-size:.9rem}
+
+@media (max-width:900px){
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .site-footer-top .container{flex-direction:column;gap:.5rem}
+}
+
+@media (max-width:520px){
+  .footer-grid{grid-template-columns:1fr}
+}

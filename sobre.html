@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sobre — Gofer Servicios SpA</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gofer: { red: '#DC2626', black: '#111827' }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navegación (coherente con index) -->
+  <nav id="navbar" class="fixed w-full z-40 bg-transparent py-4 transition-all">
+    <div class="container mx-auto px-4 md:px-6 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/img/logoGofer1.png" alt="Gofer Servicios SpA" class="w-10 h-10 object-contain rounded-full">
+        <div class="leading-tight">
+          <div class="font-bold text-gray-900">Gofer<span class="text-xs">SpA</span></div>
+          <div class="text-xs text-gray-500 tracking-wide">Servicios Integrales</div>
+        </div>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="text-gray-700 hover:text-red-600">Inicio</a>
+        <a href="sobre.html" class="text-gray-900 font-semibold">Nosotros</a>
+      </div>
+
+      <div class="md:hidden">
+        <button id="menu-btn" class="p-2 bg-white rounded-md shadow-sm">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white w-full absolute top-full left-0 shadow-lg z-50">
+      <div class="px-4 py-4 flex flex-col">
+        <a href="index.html" class="py-2">Inicio</a>
+        <a href="sobre.html" class="py-2 font-semibold">Nosotros</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Espaciador para nav fijo -->
+  <div class="h-28 md:h-32"></div>
+
+  <!-- Hero / Introducción -->
+  <header class="pt-32 pb-12 bg-white">
+    <div class="container mx-auto px-4 md:px-6 text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-8">Sobre Gofer Servicios SpA</h1>
+      <p class="max-w-3xl mx-auto text-gray-600 mt-6">Fundada en 2019, somos un equipo de profesionales dedicados a entregar soluciones seguras en altura y paisajismo de alto estándar. Ubicados en Barros Arana 492, Concepción.</p>
+    </div>
+  </header>
+
+  <!-- Misión / Visión / Valores -->
+  <main class="container mx-auto px-4 md:px-6 pb-20">
+    <div class="grid md:grid-cols-3 gap-8 mt-8">
+      <section class="bg-white rounded-2xl p-10 shadow-md border-t-4 border-red-600">
+        <div class="flex items-center gap-4 mb-4">
+          <i data-lucide="shield-check" class="w-7 h-7 text-red-600"></i>
+          <h2 class="text-xl font-bold">Misión</h2>
+        </div>
+        <p class="text-gray-600 text-sm">Ofrecer soluciones integrales de trabajo seguro en altura y paisajismo de alto estándar, garantizando excelencia operativa y entornos estéticos para clientes de élite, incluyendo templos.</p>
+      </section>
+
+      <section class="bg-white rounded-2xl p-10 shadow-md border-t-4 border-gray-800">
+        <div class="flex items-center gap-4 mb-4">
+          <i data-lucide="eye" class="w-7 h-7 text-gray-800"></i>
+          <h2 class="text-xl font-bold">Visión</h2>
+        </div>
+        <p class="text-gray-600 text-sm">Ser la empresa líder y referente nacional, reconocida por la seguridad de nuestros andamios y la calidad excepcional de nuestros proyectos de paisajismo.</p>
+      </section>
+
+      <section class="bg-white rounded-2xl p-10 shadow-md border-t-4 border-red-600">
+        <div class="flex items-center gap-4 mb-4">
+          <i data-lucide="heart" class="w-7 h-7 text-red-600"></i>
+          <h2 class="text-xl font-bold">Valores</h2>
+        </div>
+        <ul class="text-gray-600 text-sm space-y-2">
+          <li><strong>Seguridad:</strong> Prioridad absoluta en altura.</li>
+          <li><strong>Excelencia:</strong> Precisión técnica y detalle.</li>
+          <li><strong>Integridad:</strong> Honestidad y transparencia.</li>
+          <li><strong>Compromiso:</strong> Estética y durabilidad.</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- Información adicional y datos -->
+    <section class="mt-12 bg-white rounded-2xl p-8 shadow-sm">
+      <h3 class="text-2xl font-bold mb-4">Datos de la empresa</h3>
+      <div class="grid md:grid-cols-2 gap-6 text-gray-600">
+        <div>
+          <p><strong>Dirección:</strong> Barros Arana 492, Concepción</p>
+          <p><strong>Horario:</strong> Lun-Jue 08:00–18:00, Viernes 08:00–17:00</p>
+        </div>
+        <div>
+          <p><strong>Contacto:</strong> <a href="mailto:Contacto@gofer.cl" class="text-red-600">Contacto@gofer.cl</a></p>
+          <p><strong>Instagram:</strong> <a href="https://www.instagram.com/gofer.spa" target="_blank" class="text-pink-500">@gofer.spa</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (coherente con index) -->
+  <footer class="bg-black text-white py-12">
+    <div class="container mx-auto px-4 md:px-6 grid md:grid-cols-4 gap-8">
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="assets/img/logoGofer1.png" alt="Gofer Servicios SpA" class="w-10 h-10 object-contain rounded-full">
+          <div class="font-bold">Gofer<span class="text-xs">SpA</span></div>
+        </div>
+        <p class="text-gray-400 text-sm">Seguridad inquebrantable y belleza natural.</p>
+      </div>
+      <div>
+        <h4 class="font-bold mb-3">Servicios</h4>
+        <ul class="text-gray-400 text-sm space-y-2">
+          <li><a href="paisajismo.html" class="hover:text-white">Paisajismo</a></li>
+          <li><a href="andamios.html" class="hover:text-white">Andamios</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold mb-3">Empresa</h4>
+        <ul class="text-gray-400 text-sm space-y-2">
+          <li><a href="sobre.html" class="hover:text-white">Sobre Nosotros</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold mb-3">Contacto</h4>
+        <p class="text-gray-400 text-sm">Barros Arana 492<br><a href="mailto:Contacto@gofer.cl" class="text-red-600">Contacto@gofer.cl</a></p>
+      </div>
+    </div>
+    <div class="container mx-auto px-4 md:px-6 mt-8 border-t border-gray-800 pt-6 text-sm text-gray-500 text-center">&copy; 2024 Gofer Servicios SpA. Todos los derechos reservados.</div>
+  </footer>
+
+  <script>
+    // Iconos
+    lucide.createIcons();
+
+    // Menú móvil
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn) menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // Navbar: cambiar background al hacer scroll para mejorar legibilidad
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        navbar.classList.remove('bg-transparent');
+        navbar.classList.add('bg-white', 'shadow-md');
+      } else {
+        navbar.classList.remove('bg-white', 'shadow-md');
+        navbar.classList.add('bg-transparent');
+      }
+    });
+  </script>
+</body>
+</html>
